@@ -70,5 +70,5 @@ var shouldSanitize = function(value) {
 ##Limitiations
 This is a basic implementation of [Caja-HTML-Sanitizer](https://github.com/theSmaw/Caja-HTML-Sanitizer) with the specific purpose of mitigating against persistent XSS risks.
 
-#Caveats
+##Caveats
 This module trusts the dependencies to provide basic persistent XSS risk mitigation. A user of this package should review all packages and make their own decision on security and fitness for purpose.

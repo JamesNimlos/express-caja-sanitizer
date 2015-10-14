@@ -22,7 +22,7 @@ app.use(cajaSanitizer());
 ```
 
 ## URL Params
-This module by default sanitizes the request url params (`req.params`) e.g.:
+This module by default sanitizes the request url params (`req.params`) too, apart from request body and query string params, e.g.:
 
 ```
 http://www.myapp.com/rest/user/<script>console.log("hello")</script>bob/details

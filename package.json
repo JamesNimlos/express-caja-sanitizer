@@ -1,0 +1,37 @@
+{
+  "name": "express-caja-sanitizer",
+  "description": "An express middleware inspired from express-sanitizer which sanitizes URL params too. It also provides options to sanitize keys and a preprocessor function to exempt a few values from sanitizing.",
+  "author": {
+    "name": "Srivathsa Pasumarthi",
+    "email": "pv.srivathsa@gmail.com"
+  },
+  "version": "1.0.0",
+  "homepage": "https://github.com/pvsrivathsa/express-caja-sanitizer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pvsrivathsa/express-caja-sanitizer.git"
+  },
+  "license" : "MIT",
+  "main": "./index.js",
+  "scripts": {
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "sanitizer": "0.1.2",
+    "underscore": "1.7.0"
+  },
+  "keywords": [
+    "express",
+    "express middleware"
+    "sanitize",
+    "sanitization",
+    "xss"
+  ],
+  "bugs": {
+    "url": "https://github.com/markau/express-caja-sanitizer/issues"
+  },
+  "_id": "express-sanitizer@1.0.1",
+  "_from": "express-sanitizer@latest"
+}

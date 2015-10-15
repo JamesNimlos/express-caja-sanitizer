@@ -1,5 +1,5 @@
 # express-caja-sanitizer
-An express middleware inspired from express-sanitizer but additionally sanitizes URL params too. It also provides options to sanitize keys and a preprocessor function to exempt a few values from sanitizing.
+An express middleware inspired from express-sanitizer but additionally sanitizes URL params too. It also gives an option to provide a preprocessor function to decide whether a (key, value) pair should be sanitized or not.
 
 ## Installation
 ```
@@ -37,7 +37,7 @@ http://www.myapp.com/rest/user/bob/details
 ## Options
 
 `shouldSanitize`
-When 'shouldSanitize` function is provided as an option, the module will sanitize only for the values for which the function returns `true`.
+When `shouldSanitize` function is provided as an option, the module will sanitize only the (key, value) pairs for which the function returns `true`.
 
 For example, if we don't want to sanitize XML values then the preprocesser function can be
 

@@ -11,10 +11,9 @@
     "type": "git",
     "url": "git://github.com/pvsrivathsa/express-caja-sanitizer.git"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "main": "./index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "engines": {
     "node": "*"
   },
@@ -24,7 +23,7 @@
   },
   "keywords": [
     "express",
-    "express middleware"
+    "express middleware",
     "sanitize",
     "sanitization",
     "xss"

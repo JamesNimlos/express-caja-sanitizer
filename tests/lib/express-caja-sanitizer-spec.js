@@ -61,9 +61,14 @@ describe("Express Caja Sanitizer", function() {
 	it("should sanitize req.body, req.query, req.params fully, when shouldSanitize is not given", function() {
 		var middleware = lib();
 		middleware(req, res, next);
-		expect(req.body.id).toEqual("185");
-		expect(_.keys(req.query)[0]).toEqual("<a>Bob</a>id");
-		expect(req.params.name).toEqual("Bob");
+
+		var expectedBody = '{"id":"185","name":"<a>Bob</a>","xmlData":"","numeric":1}';
+		var expectedParams = '{"name":"Bob"}';
+		var expectedQuery = '{"<a>Bob</a>id":"185","arr":["tom","harry"],"obj":{"id":"38ac","name":"caja"}}';
+
+		expect(JSON.stringify(req.body)).toEqual(expectedBody);
+		expect(JSON.stringify(req.params)).toEqual(expectedParams);
+		expect(JSON.stringify(req.query)).toEqual(expectedQuery);
 		expect(next).toHaveBeenCalled();
 	});
 

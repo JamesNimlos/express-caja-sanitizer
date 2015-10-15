@@ -8,7 +8,7 @@ describe("Express Caja Sanitizer", function() {
 		req = {
 			body: {
 				"id": "<script>console.log('hey')</script>185",
-				"name":"<a href='javascript:init()'>Bob</a>",
+				"name": "<a href='javascript:init()'>Bob</a>",
 				"xmlData": "<?xml version='1.0' encoding='utf-8'?><Data/>",
 				"testFiller": undefined,
 				"numeric": 1
@@ -36,19 +36,23 @@ describe("Express Caja Sanitizer", function() {
 	});
 
 	it("should throw error when shouldSanitize is a number", function() {
-		var middleware = lib({shouldSanitize: 123});
+		var middleware = lib({
+			shouldSanitize: 123
+		});
 		try {
 			middleware();
-		} catch(e) {
+		} catch (e) {
 			expect(e.toString()).toEqual("Error: shouldSanitize should be a function");
 		}
 	});
 
 	it("should throw error when shouldSanitize is a string", function() {
-		var middleware = lib({shouldSanitize: "string"});
+		var middleware = lib({
+			shouldSanitize: "string"
+		});
 		try {
 			middleware();
-		} catch(e) {
+		} catch (e) {
 			expect(e.toString()).toEqual("Error: shouldSanitize should be a function");
 			expect(next).not.toHaveBeenCalled();
 		}
@@ -69,7 +73,7 @@ describe("Express Caja Sanitizer", function() {
 				return _.isNumber(value) || (!value.indexOf || value.indexOf("<?xml") === -1);
 			}
 		});
-		req.params = {};
+		delete req.params;
 		middleware(req, res, next);
 		expect(req.body.xmlData).toEqual("<?xml version='1.0' encoding='utf-8'?><Data/>");
 		expect(next).toHaveBeenCalled();
@@ -82,5 +86,4 @@ describe("Express Caja Sanitizer", function() {
 		lib()(req, res, next);
 		expect(req.body.id).toEqual("<script>console.log('hey')</script>185");
 	});
-
 });

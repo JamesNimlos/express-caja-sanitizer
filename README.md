@@ -42,7 +42,7 @@ When 'shouldSanitize` function is provided as an option, the module will sanitiz
 For example, if we don't want to sanitize XML values then the preprocesser function can be
 
 ```
-var shouldSanitize = function(value) {
+var shouldSanitize = function(key, value) {
   return !value.startsWith('<?xml version="1.0"')
 }
 ```

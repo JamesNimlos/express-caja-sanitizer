@@ -1,5 +1,5 @@
 # express-caja-sanitizer
-An express middleware inspired from express-sanitizer but additionally sanitizes URL params too. It also gives an option to provide a preprocessor function to decide whether a (key, value) pair should be sanitized or not.
+An express middleware inspired from express-sanitizer but additionally sanitizes URL params. It also gives an option to provide a preprocessor function to decide whether a (key, value) pair should be sanitized or not.
 
 ## Installation
 ```
@@ -22,7 +22,7 @@ app.use(cajaSanitizer());
 ```
 
 ## URL Params
-This module by default sanitizes the request url params (`req.params`) too, apart from request body and query string params, e.g.:
+This module by default sanitizes the request URL params (`req.params`), apart from request body and query string params, e.g.:
 
 ```
 http://www.myapp.com/rest/user/<script>console.log("hello")</script>bob/details
@@ -47,7 +47,7 @@ var shouldSanitize = function(key, value) {
 }
 ```
 
-##Limitiations
+##Limitations
 This is a basic implementation of [Caja-HTML-Sanitizer](https://github.com/theSmaw/Caja-HTML-Sanitizer) with the specific purpose of mitigating against persistent XSS risks.
 
 ##Caveats

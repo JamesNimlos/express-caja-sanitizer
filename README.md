@@ -36,7 +36,7 @@ http://www.myapp.com/rest/user/bob/details
 
 ## Options
 
-## `shouldSanitize`
+#### `shouldSanitize`
 When `shouldSanitize` function is provided as an option, the module will sanitize only the (key, value) pairs for which the function returns `true`.
 
 For example, if we don't want to sanitize XML values then the preprocesser function can be

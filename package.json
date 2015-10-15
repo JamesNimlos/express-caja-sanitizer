@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "sanitizer": "0.1.2",
-    "underscore": "1.7.0"
+    "lodash": "3.10.1"
   },
   "keywords": [
     "express",

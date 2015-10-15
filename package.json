@@ -13,13 +13,19 @@
   },
   "license": "MIT",
   "main": "./index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node_modules/.bin/istanbul cover node_modules/.bin/jasmine-node -- --forceexit tests/"
+  },
   "engines": {
     "node": "*"
   },
   "dependencies": {
     "sanitizer": "0.1.2",
-    "underscore": "1.7.0"
+    "lodash": "3.10.1"
+  },
+  "devDependencies": {
+    "istanbul": "0.3.22",
+    "jasmine-node": "1.14.5"
   },
   "keywords": [
     "express",

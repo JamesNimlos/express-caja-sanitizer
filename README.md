@@ -1,6 +1,8 @@
 # express-caja-sanitizer
 An express middleware inspired from express-sanitizer but additionally sanitizes URL params. It also gives an option to provide a preprocessor function to decide whether a (key, value) pair should be sanitized or not.
 
+[![Build Status](https://travis-ci.org/pvsrivathsa/express-caja-sanitizer.png)](https://travis-ci.org/pvsrivathsa/express-caja-sanitizer.png)
+
 ## Installation
 ```
 npm install express-caja-sanitizer

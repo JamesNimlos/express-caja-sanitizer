@@ -36,28 +36,8 @@ http://www.myapp.com/rest/user/bob/details
 
 ## Options
 
-1) `sanitizeKeys`
-
-Defaults to `false` and if set `true` it will sanitize the JSON keys too. e.g.:
-
-```
-{
-  "id": "1",
-  "<script>alert('hey')</script>name": "bob"
-}
-```
-
-will be sanitized to 
-
-```
-{
-  "id": "1",
-  "name": "bob"
-}
-```
-
-2) `shouldSanitize`
-When 'shouldSanitize` function is provided as an option, the module will sanitize only for the values for which the function returns `true`. 
+`shouldSanitize`
+When 'shouldSanitize` function is provided as an option, the module will sanitize only for the values for which the function returns `true`.
 
 For example, if we don't want to sanitize XML values then the preprocesser function can be
 

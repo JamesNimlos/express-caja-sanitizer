@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var _isNumber = require('lodash.isnumber');
 
 var lib = require('../../lib/express-caja-sanitizer');
 var req, req, next;
@@ -75,7 +75,7 @@ describe("Express Caja Sanitizer", function() {
 	it("should sanitize req.body, req.query, req.params only for the (key, value) pairs for which shouldSanitize returns true", function() {
 		var middleware = lib({
 			shouldSanitize: function(key, value) {
-				return _.isNumber(value) || (!value.indexOf || value.indexOf("<?xml") === -1);
+				return _isNumber(value) || (!value.indexOf || value.indexOf("<?xml") === -1);
 			}
 		});
 		delete req.params;

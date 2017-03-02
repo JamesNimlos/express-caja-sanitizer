@@ -17,8 +17,11 @@
     "node": "*"
   },
   "dependencies": {
-    "sanitizer": "0.1.2",
-    "lodash": "3.10.1"
+    "lodash.isnumber": "3.0.3",
+    "lodash.isstring": "4.0.1",
+    "lodash.pick": "4.4.0",
+    "lodash.size": "4.2.0",
+    "sanitizer": "0.1.3"
   },
   "devDependencies": {
     "istanbul": "0.3.22",

@@ -2,7 +2,7 @@
   "name": "@jamesnimlos/express-caja-sanitizer",
   "description": "An express middleware inspired from express-sanitizer but additionally sanitizes URL params. It also gives an option to provide a preprocessor function to decide whether a (key, value) pair should be sanitized or not.",
   "author": "Srivathsa Pasumarthi <pv.srivathsa@gmail.com>",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/pvsrivathsa/express-caja-sanitizer",
   "repository": {
     "type": "git",

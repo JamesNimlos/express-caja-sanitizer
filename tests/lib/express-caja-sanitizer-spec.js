@@ -83,12 +83,4 @@ describe("Express Caja Sanitizer", function() {
 		expect(req.body.xmlData).toEqual("<?xml version='1.0' encoding='utf-8'?><Data/>");
 		expect(next).toHaveBeenCalled();
 	});
-
-	it("should not sanitize object when parse throws exception", function() {
-		spyOn(JSON, "parse").andCallFake(function() {
-			throw new Error("error");
-		});
-		lib()(req, res, next);
-		expect(req.body.id).toEqual("<script>console.log('hey')</script>185");
-	});
 });

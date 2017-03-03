@@ -11,7 +11,8 @@ describe("Express Caja Sanitizer", function() {
 				"name": "<a href='javascript:init()'>Bob</a>",
 				"xmlData": "<?xml version='1.0' encoding='utf-8'?><Data/>",
 				"testFiller": undefined,
-				"numeric": 1
+				"numeric": 1,
+				"boolean": true
 			},
 			query: {
 				"<a href='javascript:init()'>Bob</a>id": "185",
@@ -62,7 +63,7 @@ describe("Express Caja Sanitizer", function() {
 		var middleware = lib();
 		middleware(req, res, next);
 
-		var expectedBody = '{"id":"185","name":"<a>Bob</a>","xmlData":"","numeric":1}';
+		var expectedBody = '{"id":"185","name":"<a>Bob</a>","xmlData":"","numeric":1,"boolean":true}';
 		var expectedParams = '{"name":"Bob"}';
 		var expectedQuery = '{"<a>Bob</a>id":"185","arr":["tom","harry"],"obj":{"id":"38ac","name":"caja"}}';
 
